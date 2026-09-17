@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_price_levels" model="ir.ui.view">
+        <field name="name">sale.order.form.price.levels</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/list/field[@name='price_unit']" position="attributes">
+                <attribute name="widget">price_level_float</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/list/field[@name='price_unit']" position="after">
+                <field name="price_level_public" column_invisible="1"/>
+                <field name="price_level_wholesale" column_invisible="1"/>
+                <field name="price_level_min" column_invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="attributes">
+                <attribute name="widget">price_level_float</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="after">
+                <field name="price_level_public" invisible="1"/>
+                <field name="price_level_wholesale" invisible="1"/>
+                <field name="price_level_min" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

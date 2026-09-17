@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="product_price_levels.PriceLevelFloatField" t-inherit="web.FloatField" t-inherit-mode="primary">
+        <xpath expr="//input" position="after">
+            <Dropdown t-if="!props.readonly and priceLevels.length" position="'bottom-end'">
+                <button type="button" class="btn btn-link p-0 ps-1 o_price_level_toggler"
+                        tabindex="-1" title="Price levels">
+                    <i class="fa fa-caret-down"/>
+                </button>
+                <t t-set-slot="content">
+                    <DropdownItem t-foreach="priceLevels" t-as="level" t-key="level.key"
+                                  class="'d-flex justify-content-between gap-3 o_price_level_item'"
+                                  onSelected="() => this.selectPriceLevel(level)">
+                        <span t-esc="level.label"/>
+                        <span class="fw-bold" t-esc="formatLevelPrice(level.price)"/>
+                    </DropdownItem>
+                </t>
+            </Dropdown>
+        </xpath>
+    </t>
+</templates>
