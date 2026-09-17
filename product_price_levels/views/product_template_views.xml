@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_price_levels" model="ir.ui.view">
+        <field name="name">product.template.form.price.levels</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <div name="list_price_uom" position="inside">
+                <span class="mx-2">Margin</span>
+                <field name="list_price_margin" class="oe_inline" style="max-width: 6rem"/>
+                <span>%</span>
+            </div>
+            <div name="list_price_uom" position="after">
+                <label for="wholesale_price" invisible="type == 'combo'"/>
+                <div name="wholesale_price_div" invisible="type == 'combo'">
+                    <field name="wholesale_price" class="oe_inline" widget="monetary"
+                           options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                    <span class="mx-2">Margin</span>
+                    <field name="wholesale_price_margin" class="oe_inline" style="max-width: 6rem"/>
+                    <span>%</span>
+                </div>
+                <label for="min_price" invisible="type == 'combo'"/>
+                <div name="min_price_div" invisible="type == 'combo'">
+                    <field name="min_price" class="oe_inline" widget="monetary"
+                           options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                    <span class="mx-2">Margin</span>
+                    <field name="min_price_margin" class="oe_inline" style="max-width: 6rem"/>
+                    <span>%</span>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

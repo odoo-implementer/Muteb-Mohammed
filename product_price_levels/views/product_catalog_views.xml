@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sale order catalog only: replace the total "On Hand" by one line per internal location.
+         The lines are rendered by the catalog order line component through a t-portal. -->
+    <record id="product_view_kanban_catalog_price_levels" model="ir.ui.view">
+        <field name="name">product.view.kanban.catalog.price.levels</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_view_kanban_catalog"/>
+        <field name="arch" type="xml">
+            <div name="o_kanban_qty_available" position="attributes">
+                <attribute name="t-if">record.is_storable.raw_value and context.product_catalog_order_model !== 'sale.order'</attribute>
+            </div>
+            <div name="o_kanban_qty_available" position="after">
+                <div t-if="record.is_storable.raw_value and context.product_catalog_order_model === 'sale.order'"
+                     name="o_kanban_qty_by_location"
+                     t-attf-id="product-{{record.id.raw_value}}-locations"/>
+            </div>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="product_price_levels.ProductCatalogSaleOrderLine" t-inherit="product.ProductCatalogOrderLine" t-inherit-mode="primary">
+        <xpath expr="//t[@t-portal]" position="after">
+            <t t-portal="`#product-${props.productId}-price`" t-if="props.priceLevels">
+                <div class="o_price_levels o_product_catalog_cancel_global_click d-flex flex-wrap gap-1 mt-1">
+                    <button t-foreach="props.priceLevels" t-as="level" t-key="level.key"
+                            type="button"
+                            t-att-class="'btn btn-sm text-nowrap ' + (props.priceLevel === level.key ? 'btn-primary' : 'btn-outline-secondary')"
+                            t-att-disabled="props.readOnly"
+                            t-att-data-price-level="level.key"
+                            t-on-click.stop="() => this.env.selectPriceLevel(level)">
+                        <span t-esc="level.label"/>: <span class="fw-bold" t-esc="formatLevelPrice(level.price)"/>
+                    </button>
+                </div>
+            </t>
+            <t t-portal="`#product-${props.productId}-locations`" t-if="props.locationQuantities">
+                <div class="o_location_quantities small mt-1">
+                    <div t-if="!props.locationQuantities.length" class="text-muted">No stock on hand</div>
+                    <div t-foreach="props.locationQuantities" t-as="location" t-key="location.id"
+                         class="d-flex justify-content-between gap-2">
+                        <span class="text-truncate" t-att-title="location.name" t-esc="location.name"/>
+                        <span class="text-nowrap">
+                            <t t-esc="formatLocationQuantity(location.quantity)"/> <t t-esc="location.uom"/>
+                        </span>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

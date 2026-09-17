@@ -1,0 +1,183 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_price_levels
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 18:03+0000\n"
+"PO-Revision-Date: 2026-09-15 18:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: product_price_levels
+#: model_terms:ir.ui.view,arch_db:product_price_levels.product_template_form_view_price_levels
+msgid "<span class=\"mx-2\">Margin</span>"
+msgstr "<span class=\"mx-2\">نسبة الربح</span>"
+
+#. module: product_price_levels
+#: model_terms:ir.ui.view,arch_db:product_price_levels.product_template_form_view_price_levels
+msgid "<span>%</span>"
+msgstr "<span>%</span>"
+
+#. module: product_price_levels
+#. odoo-javascript
+#. odoo-python
+#: code:addons/product_price_levels/models/product_product.py:0
+#: code:addons/product_price_levels/static/src/price_level_float/price_level_float_field.js:0
+#: model:ir.model.fields,field_description:product_price_levels.field_product_product__min_price
+#: model:ir.model.fields,field_description:product_price_levels.field_product_template__min_price
+msgid "Minimum Price"
+msgstr "الحد الأدنى للسعر"
+
+#. module: product_price_levels
+#: model:ir.model.fields,field_description:product_price_levels.field_sale_order_line__price_level_min
+msgid "Minimum Price Level"
+msgstr "مستوى الحد الأدنى للسعر"
+
+#. module: product_price_levels
+#: model:ir.model.fields,field_description:product_price_levels.field_product_product__min_price_margin
+#: model:ir.model.fields,field_description:product_price_levels.field_product_template__min_price_margin
+msgid "Minimum Price Margin (%)"
+msgstr "نسبة الحد الأدنى (%)"
+
+#. module: product_price_levels
+#: model:ir.model.fields,help:product_price_levels.field_product_product__min_price_margin
+#: model:ir.model.fields,help:product_price_levels.field_product_template__min_price_margin
+msgid "Minimum price = cost + cost x margin / 100."
+msgstr "الحد الأدنى للسعر = التكلفة + (التكلفة × النسبة ÷ 100)."
+
+#. module: product_price_levels
+#. odoo-javascript
+#: code:addons/product_price_levels/static/src/product_catalog/product_catalog_patch.xml:0
+msgid "No stock on hand"
+msgstr "لا يوجد رصيد في المخزون"
+
+#. module: product_price_levels
+#. odoo-javascript
+#: code:addons/product_price_levels/static/src/price_level_float/price_level_float_field.xml:0
+msgid "Price levels"
+msgstr "مستويات الأسعار"
+
+#. module: product_price_levels
+#. odoo-javascript
+#: code:addons/product_price_levels/static/src/price_level_float/price_level_float_field.js:0
+msgid "Price with levels"
+msgstr "سعر بمستويات"
+
+#. module: product_price_levels
+#. odoo-python
+#: code:addons/product_price_levels/models/product_template.py:0
+msgid ""
+"Prices cannot be computed from the cost of a product with several variants, each variant has its own cost:\n"
+"%s"
+msgstr ""
+"لا يمكن حساب الأسعار من تكلفة منتج له عدة متغيرات، فلكل متغير تكلفته الخاصة:\n"
+"%s"
+
+#. module: product_price_levels
+#: model:ir.model,name:product_price_levels.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: product_price_levels
+#: model:ir.model,name:product_price_levels.model_product_product
+msgid "Product Variant"
+msgstr "متغير المنتج"
+
+#. module: product_price_levels
+#. odoo-javascript
+#. odoo-python
+#: code:addons/product_price_levels/models/product_product.py:0
+#: code:addons/product_price_levels/static/src/price_level_float/price_level_float_field.js:0
+msgid "Public Price"
+msgstr "سعر الجمهور"
+
+#. module: product_price_levels
+#: model:ir.model.fields,field_description:product_price_levels.field_sale_order_line__price_level_public
+msgid "Public Price Level"
+msgstr "مستوى سعر الجمهور"
+
+#. module: product_price_levels
+#: model:ir.model.fields,field_description:product_price_levels.field_product_product__list_price_margin
+#: model:ir.model.fields,field_description:product_price_levels.field_product_template__list_price_margin
+msgid "Public Price Margin (%)"
+msgstr "نسبة سعر الجمهور (%)"
+
+#. module: product_price_levels
+#: model:ir.model.fields,help:product_price_levels.field_product_product__list_price_margin
+#: model:ir.model.fields,help:product_price_levels.field_product_template__list_price_margin
+msgid "Public price = cost + cost x margin / 100."
+msgstr "سعر الجمهور = التكلفة + (التكلفة × النسبة ÷ 100)."
+
+#. module: product_price_levels
+#: model:ir.actions.server,name:product_price_levels.action_recompute_prices_from_margin
+msgid "Recompute Prices from Cost"
+msgstr "إعادة حساب الأسعار من التكلفة"
+
+#. module: product_price_levels
+#: model:ir.model,name:product_price_levels.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: product_price_levels
+#: model:ir.model,name:product_price_levels.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر البيع"
+
+#. module: product_price_levels
+#. odoo-python
+#: code:addons/product_price_levels/models/product_template.py:0
+msgid "Several variants"
+msgstr "عدة متغيرات"
+
+#. module: product_price_levels
+#. odoo-python
+#: code:addons/product_price_levels/models/sale_order.py:0
+msgid "The price of an invoiced line cannot be changed."
+msgstr "لا يمكن تغيير سعر بند تمت فوترته."
+
+#. module: product_price_levels
+#. odoo-python
+#: code:addons/product_price_levels/models/product_template.py:0
+msgid "The price was not computed: each variant has its own cost."
+msgstr "لم يتم حساب السعر: لكل متغير تكلفته الخاصة."
+
+#. module: product_price_levels
+#. odoo-python
+#: code:addons/product_price_levels/models/sale_order.py:0
+msgid "Unknown price level: %s"
+msgstr "مستوى سعر غير معروف: %s"
+
+#. module: product_price_levels
+#. odoo-javascript
+#. odoo-python
+#: code:addons/product_price_levels/models/product_product.py:0
+#: code:addons/product_price_levels/static/src/price_level_float/price_level_float_field.js:0
+#: model:ir.model.fields,field_description:product_price_levels.field_product_product__wholesale_price
+#: model:ir.model.fields,field_description:product_price_levels.field_product_template__wholesale_price
+msgid "Wholesale Price"
+msgstr "سعر الجملة"
+
+#. module: product_price_levels
+#: model:ir.model.fields,field_description:product_price_levels.field_sale_order_line__price_level_wholesale
+msgid "Wholesale Price Level"
+msgstr "مستوى سعر الجملة"
+
+#. module: product_price_levels
+#: model:ir.model.fields,field_description:product_price_levels.field_product_product__wholesale_price_margin
+#: model:ir.model.fields,field_description:product_price_levels.field_product_template__wholesale_price_margin
+msgid "Wholesale Price Margin (%)"
+msgstr "نسبة سعر الجملة (%)"
+
+#. module: product_price_levels
+#: model:ir.model.fields,help:product_price_levels.field_product_product__wholesale_price_margin
+#: model:ir.model.fields,help:product_price_levels.field_product_template__wholesale_price_margin
+msgid "Wholesale price = cost + cost x margin / 100."
+msgstr "سعر الجملة = التكلفة + (التكلفة × النسبة ÷ 100)."
